@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Modal from 'react-modal';
-
 var CLOSE_TIMEOUT = 500;
 function ReactSlidingPane(_ref) {
   var isOpen = _ref.isOpen,
@@ -12,6 +11,7 @@ function ReactSlidingPane(_ref) {
       children = _ref.children,
       className = _ref.className,
       overlayClassName = _ref.overlayClassName,
+      id = _ref.id,
       closeIcon = _ref.closeIcon,
       _ref$from = _ref.from,
       from = _ref$from === void 0 ? 'right' : _ref$from,
@@ -19,6 +19,7 @@ function ReactSlidingPane(_ref) {
       shouldCloseOnEsc = _ref.shouldCloseOnEsc;
   var directionClass = "slide-pane_from_".concat(from);
   return React.createElement(Modal, {
+    id: ''.concat(id),
     className: "slide-pane ".concat(directionClass, " ").concat(className || ''),
     style: {
       content: {
@@ -61,7 +62,6 @@ ReactSlidingPane.propTypes = {
   closeIcon: PropTypes.any,
   shouldCloseOnEsc: PropTypes.bool
 };
-
 function IconClose() {
   return React.createElement("svg", {
     xmlns: "http://www.w3.org/2000/svg",
@@ -72,5 +72,4 @@ function IconClose() {
     d: "M4 11l8 8c.6.5.6 1.5 0 2-.5.6-1.5.6-2 0l-9-9c-.6-.5-.6-1.5 0-2l9-9c.5-.6 1.5-.6 2 0 .6.5.6 1.5 0 2l-8 8z"
   }));
 }
-
 export default ReactSlidingPane;

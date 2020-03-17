@@ -32,8 +32,8 @@
   transform: translateX(-100%);
 }
 .slide-pane_from_bottom {
-  height: 90vh;
-  margin-top: 10vh;
+  /* height: 100vh;
+  margin-top: 0; */
   transform: translateY(100%);
 }
 .slide-pane_from_bottom.ReactModal__Content--after-open {
@@ -49,6 +49,7 @@
   right: 0px;
   bottom: 0px;
   background-color: rgba(0,0,0,0);
+  z-index: 100;
 }
 .slide-pane__overlay.ReactModal__Overlay--after-open {
   background-color: rgba(0,0,0,0.3);
@@ -58,7 +59,7 @@
   background-color: rgba(0,0,0,0);
 }
 .slide-pane__header {
-  display: flex;
+  display: none;
   flex: 0 0 64px;
   align-items: center;
   background: #ebebeb;
@@ -95,7 +96,7 @@
 .slide-pane__content {
   position: relative;
   overflow-y: auto;
-  padding: 24px 32px;
+  padding: 0px;
   flex: 1 1 auto;
 }
 .slide-pane__subtitle {
